@@ -1,0 +1,16 @@
+# Idea configs:
+.idea
+
+# Gradle files:
+.gradle
+gradle/
+gradlew
+gradlew.bat
+
+# Gradele modules:
+sandbox/build
+addressbook-web-tests/build/
+
+# Others:
+nohup.out
+project_info.txt
