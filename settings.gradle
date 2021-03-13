@@ -1,3 +1,4 @@
 rootProject.name = 'java_for_qa'
 include 'sandbox'
+include 'addressbook-web-tests'
 
