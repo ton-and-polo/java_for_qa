@@ -1,4 +1,4 @@
-package com.github.addressbook.test;
+package com.github.addressbook.model;
 
 public class ContactData {
     // Class variables:
