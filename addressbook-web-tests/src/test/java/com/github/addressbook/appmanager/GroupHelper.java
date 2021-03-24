@@ -33,8 +33,10 @@ public class GroupHelper extends BaseHelper {
     }
 
     public void startEditingGroup() {
+        clickFormInput(By.name("edit"));
     }
 
     public void submitGroupModification() {
+        clickFormInput(By.name("update"));
     }
 }
