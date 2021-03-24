@@ -50,4 +50,20 @@ public class ContactHelper extends BaseHelper {
         clickFormInput(By.name("submit"));
     }
 
+    public void selectContact() {
+        clickFormInput(By.name("selected[]"));
+    }
+
+    public void deleteSelectedContact() {
+        clickFormInput(By.xpath("//input[@value='Delete']"));
+        submitAlertPopUp();
+    }
+
+    public void goToContactModificationPage() {
+        clickFormInput(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void submitContactModificationForm() {
+        clickFormInput(By.name("update"));
+    }
 }

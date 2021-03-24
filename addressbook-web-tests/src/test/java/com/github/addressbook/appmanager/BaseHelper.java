@@ -28,6 +28,10 @@ public class BaseHelper {
         wd.findElement(locator).submit();
     }
 
+    protected void submitAlertPopUp() {
+        wd.switchTo().alert().accept();
+    }
+
 
     // Additional methods:
     public boolean isElementPresent(By by) {

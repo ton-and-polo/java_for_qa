@@ -32,4 +32,9 @@ public class GroupHelper extends BaseHelper {
         clickFormInput(By.name("delete"));
     }
 
+    public void startEditingGroup() {
+    }
+
+    public void submitGroupModification() {
+    }
 }
