@@ -2,12 +2,11 @@ package com.github.addressbook.appmanager;
 
 import com.github.addressbook.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class ContactHelper extends BaseHelper {
-
-    public ContactHelper(ChromeDriver wd) {
+    public ContactHelper(WebDriver wd) {
         super(wd);
     }
 

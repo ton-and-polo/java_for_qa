@@ -1,12 +1,10 @@
 package com.github.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
 public class NavigationHelper  extends BaseHelper {
-    private ChromeDriver wd;
-
-    public NavigationHelper(ChromeDriver wd) {
+    public NavigationHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -16,7 +14,7 @@ public class NavigationHelper  extends BaseHelper {
     }
 
     public void goToGroupPage() {
-        clickFormInput(By.linkText("groups"));
+        clickFormInput(By.xpath("//a[@href='group.php']"));
     }
 
     public void goToHomePage() {

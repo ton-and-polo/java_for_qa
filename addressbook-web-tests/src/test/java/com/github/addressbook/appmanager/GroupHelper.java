@@ -2,11 +2,11 @@ package com.github.addressbook.appmanager;
 
 import com.github.addressbook.model.GroupData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
 public class GroupHelper extends BaseHelper {
 
-    public GroupHelper(ChromeDriver wd) {
+    public GroupHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -16,8 +16,8 @@ public class GroupHelper extends BaseHelper {
 
     public void fillGroupForm(GroupData groupData) {
         fillFormInput(By.name("group_name"), groupData.getName());
-        fillFormInput(By.name("group_header") ,groupData.getHeader());
-        fillFormInput(By.name("group_footer") ,groupData.getFooter());
+        fillFormInput(By.name("group_header"), groupData.getHeader());
+        fillFormInput(By.name("group_footer"), groupData.getFooter());
     }
 
     public void submitGroupCreation() {

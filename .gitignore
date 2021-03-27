@@ -15,4 +15,4 @@ addressbook-web-tests/build/
 nohup.out
 project_info.txt
 # Scratch file for testing purposes:
-//Scratch.java
+sandbox/src/main/java/Scratch.java

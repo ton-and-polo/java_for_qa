@@ -1,9 +1,14 @@
 package com.github.addressbook.appmanager;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
     // Helpers:
@@ -13,13 +18,24 @@ public class ApplicationManager {
     private ContactHelper contactHelper;
 
     // Variables:
-    public ChromeDriver wd;
-    public WebDriverWait wait;
+    public WebDriver wd;
+    public String browserType;
+
+    // Class constructor:
+    public ApplicationManager(String browserType) {
+        this.browserType = browserType;
+    }
 
     public void start() {
-        // Create new browser driver instance:
-        wd = new ChromeDriver();
-        wait = new WebDriverWait(wd, Duration.ofSeconds(30));
+        // Define browser to run test:
+        if (browserType.equals(BrowserType.CHROME)) {
+            wd = new ChromeDriver();
+        } else if (browserType.equals(BrowserType.FIREFOX)) {
+            wd = new FirefoxDriver();
+        }
+        // Set timeout in case of delays in DOM:
+        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
         // Helper initialization:
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
