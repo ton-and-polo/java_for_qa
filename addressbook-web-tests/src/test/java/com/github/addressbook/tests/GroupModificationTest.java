@@ -11,7 +11,7 @@ public class GroupModificationTest extends TestGeneral {
         application.getGroupHelper().startEditingGroup();
         application.getGroupHelper().fillGroupForm(
                 new GroupData(
-                        "edit_group",
+                        "test_group",
                         "edit_logo",
                         "edit_footer"
                 )

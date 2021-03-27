@@ -20,9 +20,14 @@ public class BaseHelper {
     }
 
     protected void fillFormInput(By locator, String inputData) {
-        wd.findElement(locator).click();
-        wd.findElement(locator).clear();
-        wd.findElement(locator).sendKeys(inputData);
+        if (inputData != null) {
+            String formValue = wd.findElement(locator).getAttribute("value");
+            if (! formValue.equals(inputData)) {
+                wd.findElement(locator).click();
+                wd.findElement(locator).clear();
+                wd.findElement(locator).sendKeys(inputData);
+            }
+        }
     }
 
     protected void submitForm(By locator) {

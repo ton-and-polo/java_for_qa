@@ -12,8 +12,8 @@ public class GroupCreationTest extends TestGeneral {
         application.getGroupHelper().fillGroupForm(
                 new GroupData(
                         "test_group",
-                        "test_logo",
-                        "test_footer"
+                        null,
+                        null
                 )
         );
         application.getGroupHelper().submitGroupCreation();
