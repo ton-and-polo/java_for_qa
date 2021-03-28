@@ -34,7 +34,7 @@ public class ApplicationManager {
             wd = new FirefoxDriver();
         }
         // Set timeout in case of delays in DOM:
-        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
         // Helper initialization:
         groupHelper = new GroupHelper(wd);
