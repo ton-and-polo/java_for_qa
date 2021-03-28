@@ -8,7 +8,7 @@ public class ContactCreationTest extends TestGeneral {
     @Test
     public void testContactCreation() throws Exception {
         application.getNavigationHelper().goToContactPage();
-        application.getContactHelper().fillContactForm(
+        application.getContactHelper().createNewContact(
                 new ContactData(
                         "test_name",
                         "test_middle_name",
@@ -36,7 +36,6 @@ public class ContactCreationTest extends TestGeneral {
                         "test_notes"
                 )
         );
-        application.getContactHelper().submitContactCreationForm();
         application.getNavigationHelper().goToHomePage();
     }
 
