@@ -10,8 +10,16 @@ public class GroupHelper extends BaseHelper {
         super(wd);
     }
 
-    public void createNewGroup() {
+
+    // Creation:
+    public void startGroupCreation() {
         clickFormInput(By.name("new"));
+    }
+
+    public void createNewGroup(GroupData group) {
+        startGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
     }
 
     public void fillGroupForm(GroupData groupData) {
@@ -24,6 +32,16 @@ public class GroupHelper extends BaseHelper {
         clickFormInput(By.name("submit"));
     }
 
+    // Modification:
+    public void startEditingGroup() {
+        clickFormInput(By.name("edit"));
+    }
+
+    public void submitGroupModification() {
+        clickFormInput(By.name("update"));
+    }
+
+    // Deletion:
     public void selectGroup() {
         clickFormInput(By.name("selected[]"));
     }
@@ -32,11 +50,8 @@ public class GroupHelper extends BaseHelper {
         clickFormInput(By.name("delete"));
     }
 
-    public void startEditingGroup() {
-        clickFormInput(By.name("edit"));
-    }
 
-    public void submitGroupModification() {
-        clickFormInput(By.name("update"));
+    public boolean groupIsPresent() {
+        return isElementPresent(By.name("selected[]"));
     }
 }

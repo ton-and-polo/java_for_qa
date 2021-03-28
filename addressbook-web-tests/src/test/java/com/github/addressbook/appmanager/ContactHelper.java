@@ -10,6 +10,12 @@ public class ContactHelper extends BaseHelper {
         super(wd);
     }
 
+    // Create:
+    public void createNewContact(ContactData contact) {
+        fillContactForm(contact);
+        submitContactCreationForm();
+    }
+
     public void fillContactForm(ContactData contactData) {
         // Refactor all this lines by: fillFormInput() method:
         fillFormInput(By.name("firstname"), contactData.getFirstName());
@@ -27,7 +33,6 @@ public class ContactHelper extends BaseHelper {
         fillFormInput(By.name("email2"), contactData.getSecondEmail());
         fillFormInput(By.name("email3"), contactData.getThirdEmail());
         fillFormInput(By.name("homepage"), contactData.getHomePage());
-
 
 
         // Note you have to create a new method for Base
@@ -49,13 +54,9 @@ public class ContactHelper extends BaseHelper {
         clickFormInput(By.name("submit"));
     }
 
+    // Modification:
     public void selectContact() {
         clickFormInput(By.name("selected[]"));
-    }
-
-    public void deleteSelectedContact() {
-        clickFormInput(By.xpath("//input[@value='Delete']"));
-        submitAlertPopUp();
     }
 
     public void goToContactModificationPage() {
@@ -65,4 +66,15 @@ public class ContactHelper extends BaseHelper {
     public void submitContactModificationForm() {
         clickFormInput(By.name("update"));
     }
+
+    // Deletion:
+    public boolean contactIsPresent() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void deleteSelectedContact() {
+        clickFormInput(By.xpath("//input[@value='Delete']"));
+        submitAlertPopUp();
+    }
+
 }
